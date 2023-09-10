@@ -68,7 +68,7 @@ type MenuProps = {
 const Menu: React.FC<MenuProps> = ({ links }) => {
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
-  const [opened, { toggle, close }] = useDisclosure(false);
+  const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
     <a
