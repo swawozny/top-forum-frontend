@@ -1,6 +1,8 @@
 import { Container, createStyles, Group, rem } from "@mantine/core";
 
 import logo from "../assets/images/logo.png";
+import Menu from "./Menu";
+import { menuLinks } from "../constants/menuLinks";
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -24,7 +26,12 @@ const Header = () => {
     <div className={classes.header}>
       <Container className={classes.mainSection}>
         <Group position="apart">
-          <img src={logo} width={300} height={66} />
+          <img
+            src={logo}
+            width={300}
+            height={66}
+          />
+          <Menu links={menuLinks} />
         </Group>
       </Container>
     </div>
