@@ -1,6 +1,8 @@
+import React, { Fragment } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Burger, createStyles, Group, Paper, rem, Transition } from "@mantine/core";
-import React, { Fragment, useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
+
 import { MenuLink } from "../constants/menuLinks";
 
 const HEADER_HEIGHT = rem(90);
@@ -65,23 +67,20 @@ const useStyles = createStyles((theme) => ({
 type MenuProps = {
   links: MenuLink[];
 };
+
 const Menu: React.FC<MenuProps> = ({ links }) => {
-  const [active, setActive] = useState(links[0].link);
+  const { pathname } = useLocation();
   const { classes, cx } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+  const items = links.map(({ link, label }) => (
+    <Link
+      to={link}
+      key={link}
+      className={cx(classes.link, { [classes.linkActive]: pathname === link })}
     >
-      {link.label}
-    </a>
+      {label}
+    </Link>
   ));
 
   return (
