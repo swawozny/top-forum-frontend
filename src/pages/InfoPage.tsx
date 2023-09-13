@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, createStyles, Group, rem, Text, Title } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -57,7 +58,9 @@ const InfoPage: React.FC<InfoPageProps> = ({ title, description, buttonText, but
             {description}
           </Text>
           <Group position="center">
+            <Link to={buttonHref}>
             <Button size="md">{buttonText}</Button>
+            </Link>
           </Group>
         </div>
       </div>

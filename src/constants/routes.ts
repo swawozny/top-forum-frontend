@@ -1,4 +1,5 @@
 import SignUp from "../pages/SignUp";
+import Login from "../pages/Login";
 
 export interface Route {
   name: string;
@@ -7,5 +8,6 @@ export interface Route {
 }
 
 export const routes: Route[] = [
-  { name: "Sign up", path: "/signup", component: SignUp }
+  { name: "Sign up", path: "/signup", component: SignUp },
+  { name: "Login", path: "/login", component: Login }
 ];

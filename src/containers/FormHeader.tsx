@@ -1,13 +1,15 @@
 import React, { Fragment } from "react";
 import { Anchor, Text, Title } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 interface FormHeaderProps {
   title: string;
   subtitle: string;
-  link: string;
+  linkTitle: string;
+  linkPath: string;
 }
 
-const FormHeader: React.FC<FormHeaderProps> = ({ title, subtitle, link }) => {
+const FormHeader: React.FC<FormHeaderProps> = ({ title, subtitle, linkTitle, linkPath }) => {
   return (
     <Fragment>
       <Title
@@ -23,12 +25,14 @@ const FormHeader: React.FC<FormHeaderProps> = ({ title, subtitle, link }) => {
         mt={5}
       >
         {subtitle}{" "}
+        <Link to={linkPath}>
         <Anchor
           size="sm"
           component="button"
         >
-          {link}
+          {linkTitle}
         </Anchor>
+        </Link>
       </Text>
     </Fragment>
   );
