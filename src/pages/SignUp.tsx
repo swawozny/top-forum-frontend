@@ -59,7 +59,7 @@ const SignUp = () => {
         title={"Please confirm your email"}
         description={"We have sent a code to the email you provided, which you must enter the first time you log in to confirm your address."}
         buttonText={"Take me to the login page"}
-        buttonHref={""}
+        buttonHref={"/login"}
       />
     );
   }
@@ -70,7 +70,8 @@ const SignUp = () => {
         <FormHeader
           title="Create an account"
           subtitle="Already have an account?"
-          link="Login"
+          linkTitle="Login"
+          linkPath="/login"
         />
         <Paper
           withBorder
