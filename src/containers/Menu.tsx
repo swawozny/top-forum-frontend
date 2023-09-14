@@ -5,7 +5,7 @@ import { useDisclosure } from "@mantine/hooks";
 
 import { MenuLink } from "../constants/menuLinks";
 
-const HEADER_HEIGHT = rem(90);
+const HEADER_HEIGHT = rem(141);
 
 const useStyles = createStyles((theme) => ({
   links: {
@@ -70,7 +70,7 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ links }) => {
   const { pathname } = useLocation();
-  const { classes, cx } = useStyles();
+  const { classes, theme, cx } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map(({ link, label }) => (
