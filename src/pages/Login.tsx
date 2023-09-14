@@ -40,6 +40,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loginCompleted, setLoginCompleted] = useState(false);
+  const [emailToConfirm, setEmailToConfirm] = useState("");
 
   const form = useForm({
     initialValues: {
@@ -60,8 +61,12 @@ const Login = () => {
       if (result.status === StatusCodes.OK) {
         setLoginCompleted(true);
       }
-    } catch ({ response: { data: { message } } }) {
-      setErrorMessage(message as string);
+    } catch ({ response }) {
+      const { data, status }: any = response;
+      if (status === StatusCodes.FORBIDDEN) {
+        setEmailToConfirm(email);
+      }
+      setErrorMessage(data.message as string);
     }
     setIsLoading(false);
   };
@@ -70,6 +75,15 @@ const Login = () => {
     return (
       <Navigate
         to="/"
+        replace={true}
+      />
+    );
+  }
+
+  if (emailToConfirm) {
+    return (
+      <Navigate
+        to={`/confirm-email/${emailToConfirm}`}
         replace={true}
       />
     );
@@ -114,9 +128,7 @@ const Login = () => {
             <Button
               type="submit"
               mt="xl"
-              size="md"
               disabled={isLoading}
-              fullWidth
             >
               {isLoading ? <Loader color="white" size="sm" /> : "Login"}
             </Button>
