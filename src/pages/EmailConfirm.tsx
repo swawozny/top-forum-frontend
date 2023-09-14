@@ -45,15 +45,6 @@ const useStyles = createStyles((theme) => ({
 
 const EmailConfirm = () => {
   const { email } = useParams();
-
-  if (!email) {
-    return (
-      <Navigate
-        to="/login"
-      />
-    );
-  }
-
   const { classes } = useStyles();
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -67,6 +58,14 @@ const EmailConfirm = () => {
       activationCode: hasLength({ min: 20, max: 20 }, "Activation code must be 20 characters long")
     }
   });
+
+  if (!email) {
+    return (
+      <Navigate
+        to="/login"
+      />
+    );
+  }
 
   const handleOnSubmit = async (values: any) => {
     const { activationCode } = values;
