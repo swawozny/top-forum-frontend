@@ -5,7 +5,7 @@ import { useDisclosure } from "@mantine/hooks";
 
 import { MenuLink } from "../constants/menuLinks";
 
-const HEADER_HEIGHT = rem(90);
+const HEADER_HEIGHT = rem(141);
 
 const useStyles = createStyles((theme) => ({
   links: {
