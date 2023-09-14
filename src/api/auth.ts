@@ -11,3 +11,10 @@ export const login = (email: string, password: string) => {
     password
   });
 };
+
+export const confirmEmail = (email: string, activationCode: string) => {
+  return axiosInstance.post("/auth/confirm-email", {
+    email,
+    activationCode
+  });
+};
