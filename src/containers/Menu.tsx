@@ -70,7 +70,7 @@ type MenuProps = {
 
 const Menu: React.FC<MenuProps> = ({ links }) => {
   const { pathname } = useLocation();
-  const { classes, theme, cx } = useStyles();
+  const { classes, cx } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map(({ link, label }) => (

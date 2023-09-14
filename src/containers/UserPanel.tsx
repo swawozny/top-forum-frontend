@@ -23,7 +23,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const UserPanel = () => {
-  const { classes, theme, cx } = useStyles();
+  const { classes, cx } = useStyles();
   const { username, isLogged } = useSelector(({ auth }) => auth);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
   const navigate = useNavigate();
