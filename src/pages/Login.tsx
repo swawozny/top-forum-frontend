@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {
   Alert,
   Anchor,
@@ -18,7 +19,8 @@ import { hasLength, isEmail, useForm } from "@mantine/form";
 import { IconAlertCircle } from "@tabler/icons-react";
 import { StatusCodes } from "http-status-codes";
 
-import { login } from "../api/auth";
+import { tryLogin } from "../api/auth";
+import { login } from "../store/slices/authSlice";
 
 const useStyles = createStyles((theme) => ({
   form: {
@@ -37,6 +39,7 @@ const useStyles = createStyles((theme) => ({
 
 const Login = () => {
   const { classes } = useStyles();
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [loginCompleted, setLoginCompleted] = useState(false);
@@ -57,8 +60,11 @@ const Login = () => {
     const { email, password } = values;
     setIsLoading(true);
     try {
-      const result = await login(email, password);
-      if (result.status === StatusCodes.OK) {
+      const result = await tryLogin(email, password);
+      const { status, data } = result;
+      if (status === StatusCodes.OK) {
+        const { username, token } = data;
+        dispatch(login({ username, token }));
         setLoginCompleted(true);
       }
     } catch ({ response }) {
