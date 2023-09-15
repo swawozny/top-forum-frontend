@@ -24,3 +24,9 @@ export const tryResetPassword = (email: string) => {
     email
   });
 };
+
+export const resetPassword = (password: string, userId: string, restoringCode: string) => {
+  return axiosInstance.post(`/auth/reset-password?uid=${userId}&restoringCode=${restoringCode}`, {
+    password
+  });
+};
