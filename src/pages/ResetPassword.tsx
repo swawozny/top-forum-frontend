@@ -32,12 +32,6 @@ const ResetPassword = () => {
   const userId = searchParams.get("uid");
   const restoringCode = searchParams.get("restoringCode");
 
-  if (!userId || !restoringCode) {
-    return (
-      <Navigate to="/forgot-password" />
-    );
-  }
-
   const form = useForm({
     initialValues: {
       password: "",
@@ -49,9 +43,15 @@ const ResetPassword = () => {
     }
   });
 
+  if (!userId || !restoringCode) {
+    return (
+      <Navigate to="/forgot-password" />
+    );
+  }
+
   const handleOnSubmit = async (values: any) => {
     const { password } = values;
-
+    setIsLoading(true);
     try {
       const result = await resetPassword(password, userId, restoringCode);
       if (result.status === StatusCodes.OK) {
@@ -60,6 +60,7 @@ const ResetPassword = () => {
     } catch ({ response: { data: { message } } }) {
       setErrorMessage(message as string);
     }
+    setIsLoading(true);
   };
 
   if (completed) {

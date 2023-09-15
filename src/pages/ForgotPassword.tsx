@@ -115,7 +115,9 @@ const ForgotPassword = () => {
           >
             <Button
               className={classes.control}
-              type="submit">
+              type="submit"
+              disabled={isLoading}
+            >
               {isLoading ? <Loader color="white" size="xs" /> : "Reset password"}
             </Button>
           </Group>
