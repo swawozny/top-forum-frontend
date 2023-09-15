@@ -18,3 +18,9 @@ export const confirmEmail = (email: string, activationCode: string) => {
     activationCode
   });
 };
+
+export const tryResetPassword = (email: string) => {
+  return axiosInstance.post("/auth/try-reset-password", {
+    email
+  });
+};
