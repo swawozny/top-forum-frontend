@@ -18,3 +18,15 @@ export const confirmEmail = (email: string, activationCode: string) => {
     activationCode
   });
 };
+
+export const tryResetPassword = (email: string) => {
+  return axiosInstance.post("/auth/try-reset-password", {
+    email
+  });
+};
+
+export const resetPassword = (password: string, userId: string, restoringCode: string) => {
+  return axiosInstance.post(`/auth/reset-password?uid=${userId}&restoringCode=${restoringCode}`, {
+    password
+  });
+};

@@ -5,6 +5,8 @@ import Header from "./Header";
 import EmailConfirm from "../pages/EmailConfirm";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
+import ForgotPassword from "../pages/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword";
 
 interface Route {
   name: string;
@@ -15,7 +17,9 @@ interface Route {
 const routes: Route[] = [
   { name: "Sign up", path: "/signup", component: <SignUp /> },
   { name: "Login", path: "/login", component: <Login /> },
-  { name: "Email confirm", path: "/confirm-email/:email", component: <EmailConfirm /> }
+  { name: "Email confirm", path: "/confirm-email/:email", component: <EmailConfirm /> },
+  { name: "Forgot password", path: "/forgot-password", component: <ForgotPassword /> },
+  { name: "Reset password", path: "/reset-password", component: <ResetPassword /> }
 ];
 
 const App = () => {

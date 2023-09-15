@@ -147,6 +147,14 @@ const Login = () => {
               </Link>
             </Anchor>
           </Text>
+          <Text ta="center" mt="md">
+            Forgot your password?{" "}
+            <Anchor<"a"> weight={700} onClick={(event) => event.preventDefault()}>
+              <Link to="/forgot-password">
+                Reset
+              </Link>
+            </Anchor>
+          </Text>
         </Paper>
       </Container>
     </Fragment>
