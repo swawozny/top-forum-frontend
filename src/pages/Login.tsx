@@ -3,7 +3,6 @@ import { Link, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   Alert,
-  Anchor,
   Button,
   Container,
   createStyles,
@@ -141,19 +140,15 @@ const Login = () => {
           </form>
           <Text ta="center" mt="md">
             Don&apos;t have an account?{" "}
-            <Anchor<"a"> weight={700} onClick={(event) => event.preventDefault()}>
               <Link to="/signup">
                 Register
               </Link>
-            </Anchor>
           </Text>
           <Text ta="center" mt="md">
             Forgot your password?{" "}
-            <Anchor<"a"> weight={700} onClick={(event) => event.preventDefault()}>
               <Link to="/forgot-password">
                 Reset
               </Link>
-            </Anchor>
           </Text>
         </Paper>
       </Container>
