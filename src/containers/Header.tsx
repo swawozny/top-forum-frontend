@@ -28,6 +28,7 @@ const Header = () => {
       <Container className={classes.mainSection}>
         <Group position="apart">
           <img
+            alt="logo"
             src={logo}
             width={300}
             height={66}

@@ -7,14 +7,16 @@ import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import Home from "../pages/Home";
 
-interface Route {
+interface RouteInfo {
   name: string;
   path: string;
   component: ReactNode;
 }
 
-const routes: Route[] = [
+const routes: RouteInfo[] = [
+  { name: "Home", path: "/", component: <Home /> },
   { name: "Sign up", path: "/signup", component: <SignUp /> },
   { name: "Login", path: "/login", component: <Login /> },
   { name: "Email confirm", path: "/confirm-email/:email", component: <EmailConfirm /> },
