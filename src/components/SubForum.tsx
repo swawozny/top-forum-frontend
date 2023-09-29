@@ -1,13 +1,15 @@
 import React from "react";
 import { Card, Center, Container, createStyles, Grid, rem, Text } from "@mantine/core";
 import { IconMessages } from "@tabler/icons-react";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   card: {
     borderRadius: 0,
-    border: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1]
-    }`
+    "&:hover": {
+      backgroundColor: theme.colors.gray[1],
+      cursor: "pointer"
+    }
   },
 
   cardTitle: {
@@ -24,15 +26,21 @@ const useStyles = createStyles((theme) => ({
 interface Props {
   title: string;
   description: string;
+  subForumId: string;
 }
 
-const SubForum: React.FC<Props> = ({ title, description }) => {
+const SubForum: React.FC<Props> = ({ title, description, subForumId }) => {
   const { classes } = useStyles();
+  const navigate = useNavigate();
+
+  const handleOnClick = () => navigate(`/forum/${subForumId}`);
 
   return (
     <Card
       key={title}
       className={classes.card}
+      onClick={handleOnClick}
+      withBorder
     >
       <Grid>
         <Center>
