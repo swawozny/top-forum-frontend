@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import Home from "../pages/Home";
+import Forum from "../pages/Forum";
 
 interface RouteInfo {
   name: string;
@@ -21,7 +22,8 @@ const routes: RouteInfo[] = [
   { name: "Login", path: "/login", component: <Login /> },
   { name: "Email confirm", path: "/confirm-email/:email", component: <EmailConfirm /> },
   { name: "Forgot password", path: "/forgot-password", component: <ForgotPassword /> },
-  { name: "Reset password", path: "/reset-password", component: <ResetPassword /> }
+  { name: "Reset password", path: "/reset-password", component: <ResetPassword /> },
+  { name: "Forum", path: "/forum/:id", component: <Forum /> }
 ];
 
 const App = () => {

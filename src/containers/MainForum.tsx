@@ -9,9 +9,6 @@ import { SubForumData } from "./Forums";
 const useStyles = createStyles((theme) => ({
   card: {
     marginBottom: "10px",
-    border: `${rem(1)} solid ${
-      theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0]
-    }`,
     borderRadius: "0"
   },
 
@@ -45,6 +42,7 @@ const MainForum: React.FC<MainForumProps> = ({ title, subForums }) => {
       key={id}
       title={title}
       description={description}
+      subForumId={id}
     />
   ));
 
@@ -52,9 +50,9 @@ const MainForum: React.FC<MainForumProps> = ({ title, subForums }) => {
   return (
     <Card
       key={title}
-      shadow="md"
-      radius="md"
+      shadow="sm"
       className={classes.card}
+      withBorder
     >
       <Group
         position="apart"
