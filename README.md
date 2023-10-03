@@ -1,46 +1,142 @@
-# Getting Started with Create React App
+![Vercel](https://vercelbadge.vercel.app/api/swawozny/top-forum-frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/swawozny/top-forum-frontend">
+    <img src="https://i.postimg.cc/9QHyYjqF/logo.png" alt="Logo" width="340" height="80">
+  </a>
 
-## Available Scripts
+<h3 align="center">TOP-FORUM.ONLINE FRONT-END</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    Front-end of web forum application.
+    <br />
+    <br />
+    <a href="https://top-forum-frontend.vercel.app">View Demo</a>
+    ·
+    <a href="https://github.com/swawozny/top-forum-frontend/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/swawozny/top-forum-frontend/issues">Report Feature</a>
+  </p>
+</div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Third-party libraries used in project</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The front-end of an application that enables users to exchange information, viewpoints, experiences, and opinions on a wide range of topics.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Third-party libraries used in project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [mantine](https://mantine.dev): components library
+- [redux](https://redux-toolkit.js.org): state managment
+- [axios](https://axios-http.com): to send api request
+- [react-router-dom](https://reactrouter.com/en/main): app routing
+- [http-status-codes](https://www.npmjs.com/package/http-status-codes): to return HTTP status codes
+- [react-query](https://www.npmjs.com/package/nodemailer): to fetch data
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- GETTING STARTED -->
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+These are the instructions for setting up the project locally. To get a local copy up and running, follow these simple example steps.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
+* [npm](https://www.npmjs.com/get-npm)
+* [Node.js](https://nodejs.org/en/blog/release)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+### Setup Application
+**1. Clone this repository to your local machine**
+```
+$ git clone https://github.com/swawozny/top-forum-frontend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**2. Install backend packages via npm**
+```
+$ cd top-forum-frontend
+$ npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**3. Create .env file**
+```
+$ touch .env
+```
+
+**5. Store environment variables in .env file then save**
+```
+#BACKEND API DATA
+REACT_APP_API_URL=SKIP
+```
+**6. Run server**
+```
+$ npm start
+```
+
+App is now available under http://localhost:3000.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Sebastian Wąwoźny - sebastianwawozny@wp.pl
+
+Project Link: [https://github.com/swawozny/top-forum-frontend](https://github.com/swawozny/top-forum-frontend)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
