@@ -9,6 +9,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
 import Home from "../pages/Home";
 import Forum from "../pages/Forum";
+import ForumTopic from "../pages/ForumTopic";
 
 interface RouteInfo {
   name: string;
@@ -23,7 +24,8 @@ const routes: RouteInfo[] = [
   { name: "Email confirm", path: "/confirm-email/:email", component: <EmailConfirm /> },
   { name: "Forgot password", path: "/forgot-password", component: <ForgotPassword /> },
   { name: "Reset password", path: "/reset-password", component: <ResetPassword /> },
-  { name: "Forum", path: "/forum/:id", component: <Forum /> }
+  { name: "Forum", path: "/forum/:id", component: <Forum /> },
+  { name: "Forum topic", path: "/forum-topic/:id", component: <ForumTopic /> }
 ];
 
 const App = () => {
