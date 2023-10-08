@@ -7,7 +7,7 @@ interface Props {
 }
 
 const PostContent: React.FC<Props> = ({ content, createdAt }) => {
-  const addedDate = new Date(createdAt).toLocaleString();
+  const addedDate = new Date(createdAt).toLocaleString("en-US");
 
   return (
     <Group position={"apart"}>
