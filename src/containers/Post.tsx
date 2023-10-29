@@ -5,7 +5,7 @@ import PostAuthor, { User } from "../components/PostAuthor";
 import PostContent from "../components/PostContent";
 
 export interface PostInfo {
-  User: User;
+  postCreator: User;
   content: string;
   id: string;
   createdAt: string;
@@ -25,7 +25,7 @@ const useStyles = createStyles((theme) => ({
 
 const Post: React.FC<Props> = ({ post }) => {
   const { classes } = useStyles();
-  const user = post.User;
+  const { postCreator } = post;
 
   return (
     <Container my="md">
@@ -39,7 +39,7 @@ const Post: React.FC<Props> = ({ post }) => {
             sm={2}
             className={classes.card}
           >
-            <PostAuthor {...user} />
+            <PostAuthor {...postCreator} />
           </Grid.Col>
           <Divider
             orientation="vertical"

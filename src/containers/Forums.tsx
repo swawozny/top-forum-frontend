@@ -14,11 +14,11 @@ interface ForumsProps {
 }
 
 const Forums: React.FC<ForumsProps> = ({ forumList }) => {
-  const mainForums = forumList.map(({ id, title, children }) => (
+  const mainForums = forumList.map(({ id, title, subForums }) => (
     <MainForum
       key={id}
       title={title}
-      subForums={children}
+      subForums={subForums}
     />
   ));
 

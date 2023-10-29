@@ -14,13 +14,14 @@ interface Role {
 export interface User {
   id: number;
   username: string;
-  Role: Role;
+  userRole: Role;
 }
 
 const PostAuthor = (user: User) => {
   const { classes } = useStyles();
 
-  const { username, Role } = user;
+  const { username, userRole } = user;
+  const { name: roleName } = userRole;
 
   return (
     <Container>
@@ -42,7 +43,7 @@ const PostAuthor = (user: User) => {
         fz="sm"
         c="dimmed"
       >
-        {Role.name}
+        {roleName}
       </Text>
     </Container>
   );
