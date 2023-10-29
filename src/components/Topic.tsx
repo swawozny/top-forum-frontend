@@ -9,7 +9,7 @@ interface TopicProps {
   id: string;
   title: string;
   createdAt: string;
-  User: User;
+  topicCreator: User;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -23,7 +23,7 @@ const useStyles = createStyles((theme) => ({
   }
 }));
 
-const Topic: React.FC<TopicProps> = ({ id, title, createdAt, User }) => {
+const Topic: React.FC<TopicProps> = ({ id, title, createdAt, topicCreator }) => {
   const { classes } = useStyles();
   const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ const Topic: React.FC<TopicProps> = ({ id, title, createdAt, User }) => {
             c="dimmed"
             fw={400}
           >
-            added by <b>{User.username}</b>, {addedData.toLocaleDateString()}
+            added by <b>{topicCreator.username}</b>, {addedData.toLocaleDateString()}
           </Text>
         </Container>
       </Group>

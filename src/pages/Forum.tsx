@@ -12,8 +12,8 @@ interface ForumData {
   id: string;
   title: string;
   description: string;
-  children: SubForumData[];
-  Topics: TopicData[];
+  subForums: SubForumData[];
+  forumTopics: TopicData[];
 }
 
 const Forum = () => {
@@ -40,15 +40,16 @@ const Forum = () => {
   }
 
   const forum: ForumData = response.data;
+  const { title, subForums, forumTopics } = forum;
 
   return (
     <Container>
       <MainForum
-        title={forum.title}
-        subForums={forum.children}
+        title={title}
+        subForums={subForums}
       />
       <Topics
-        topicList={forum.Topics}
+        topicList={forumTopics}
       />
     </Container>
   );

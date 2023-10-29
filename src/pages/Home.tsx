@@ -8,7 +8,7 @@ import { getForums } from "../api/forums";
 export interface MainForumData {
   id: string;
   title: string;
-  children: SubForumData[];
+  subForums: SubForumData[];
 }
 
 const Home = () => {

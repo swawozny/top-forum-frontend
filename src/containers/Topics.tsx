@@ -16,7 +16,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export interface TopicData {
-  User: User;
+  topicCreator: User;
   createdAt: string;
   id: string;
   title: string;

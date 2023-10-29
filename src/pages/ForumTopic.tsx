@@ -12,7 +12,7 @@ import { PostInfo } from "../containers/Post";
 interface TopicData {
   id: string;
   title: string;
-  Posts: PostInfo[];
+  topicPosts: PostInfo[];
   createdAt: string;
   updatedAt: string;
 }
@@ -49,7 +49,7 @@ const ForumTopic = () => {
 
   const topicInfo: TopicInfo = response.data;
   const { topic, totalPages } = topicInfo;
-  const posts = topic.Posts;
+  const { topicPosts } = topic;
 
   return (
     <Fragment>
@@ -58,7 +58,7 @@ const ForumTopic = () => {
         actualPage={page}
         handleChangePage={setPage}
       />
-      <Posts posts={posts} />
+      <Posts posts={topicPosts} />
       <PaginationBar
         totalPages={totalPages}
         actualPage={page}
